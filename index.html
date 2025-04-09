@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Code Access</title>
+    <script>
+        // Function to check the entered code
+        function checkDeveloperCode() {
+            // Correct 10-digit developer code
+            var correctCode = "0107326451";
+            
+            // Get the user input from the input field
+            var userCode = document.getElementById("developerCode").value;
+
+            // Check if the entered code matches the correct code
+            if (userCode === correctCode) {
+                // If correct, redirect the user to the desired page
+                window.location.href = "https://www.yoursuccessfulwebsite.com";  // Replace with your desired URL
+            } else {
+                // If incorrect, show an error message
+                alert("Incorrect code. Please try again.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Developer Code Access</h1>
+    <p>Please enter the 10-digit developer code to proceed:</p>
+    
+    <!-- Input field for the 10-digit code -->
+    <input type="text" id="developerCode" maxlength="10" placeholder="Enter 10-digit code" />
+    
+    <!-- Button to submit the code -->
+    <button onclick="checkDeveloperCode()">Submit</button>
+    
+    <!-- Optional message for incorrect code -->
+    <p id="errorMessage" style="color: red;"></p>
+</body>
+</html>
