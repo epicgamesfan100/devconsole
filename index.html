@@ -8,7 +8,7 @@
         /* General body styling */
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Soft gradient background */
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
             margin: 0;
             padding: 0;
             display: flex;
@@ -19,9 +19,8 @@
             text-align: center;
         }
 
-        /* Main container styling */
         .container {
-            background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            background: rgba(255, 255, 255, 0.9);
             padding: 40px;
             border-radius: 10px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
@@ -29,7 +28,6 @@
             max-width: 400px;
         }
 
-        /* Heading styles */
         h1 {
             font-size: 2.5rem;
             margin-bottom: 20px;
@@ -37,14 +35,12 @@
             text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
         }
 
-        /* Paragraph styling */
         p {
             font-size: 1.1rem;
             margin-bottom: 20px;
             color: #444;
         }
 
-        /* Input field styling */
         input[type="text"] {
             padding: 15px;
             font-size: 1rem;
@@ -57,13 +53,11 @@
             transition: border-color 0.3s;
         }
 
-        /* Input focus styling */
         input[type="text"]:focus {
             border-color: #ff7e5f;
             outline: none;
         }
 
-        /* Button styling */
         button {
             padding: 12px 25px;
             font-size: 1rem;
@@ -75,19 +69,16 @@
             transition: background-color 0.3s ease;
         }
 
-        /* Button hover effect */
         button:hover {
             background-color: #feb47b;
         }
 
-        /* Error message styling */
         #errorMessage {
             color: #ff4747;
             font-size: 1rem;
             margin-top: 15px;
         }
 
-        /* Responsive design for smaller screens */
         @media screen and (max-width: 480px) {
             .container {
                 padding: 25px;
@@ -104,37 +95,36 @@
         }
     </style>
     <script>
-        // Function to check the entered code
+        // Check developer code
         function checkDeveloperCode() {
-            // Correct 10-digit developer code
             var correctCode = "0107326451";
-            
-            // Get the user input from the input field
             var userCode = document.getElementById("developerCode").value;
 
-            // Check if the entered code matches the correct code
             if (userCode === correctCode) {
-                // If correct, redirect the user to the desired page
-                window.location.href = "https://epicgamesfan100.github.io/devconsolein/";  // Replace with your desired URL
+                window.location.href = "https://epicgamesfan100.github.io/devconsolein/";
             } else {
-                // If incorrect, show an error message
                 document.getElementById("errorMessage").textContent = "Incorrect code. Please try again.";
             }
         }
+
+        // Spacebar press tracker
+        let spacePressCount = 0;
+        document.addEventListener('keydown', function(event) {
+            if (event.code === 'Space') {
+                spacePressCount++;
+                if (spacePressCount >= 25) {
+                    window.location.href = "https://example.com/secretpage"; // Replace with your secret URL
+                }
+            }
+        });
     </script>
 </head>
 <body>
     <div class="container">
         <h1>Developer Code Access</h1>
         <p>Please enter the 10-digit developer code to proceed:</p>
-        
-        <!-- Input field for the 10-digit code -->
         <input type="text" id="developerCode" maxlength="10" placeholder="Enter 10-digit code" />
-        
-        <!-- Button to submit the code -->
         <button onclick="checkDeveloperCode()">Submit</button>
-        
-        <!-- Error message -->
         <p id="errorMessage"></p>
     </div>
 </body>
